@@ -6,7 +6,7 @@ Bedient wird im Feld über beleuchtete Taster und ein 7-Segment-Display; Einrich
 
 **Zielsystem:** TS-Optics Photoline 72/432 f/6 + TSFLAT72, ZWO ASI294MC Pro, UV/IR-Cut und (geplant) 3 nm Dualband.
 
-**Status:** Konzept und Bauteilauswahl abgeschlossen. Gehäusekonstruktion und Diffusorkonzept getestet, Schaltplan, Layout und Firmware stehen aus.
+**Status:** Konzept und Bauteilauswahl abgeschlossen. Gehäusekonstruktion, Schaltplan, Layout und Firmware stehen aus.
 
 ---
 
@@ -38,8 +38,9 @@ Edge-Lit-Panel mit getrenntem Lichtleiter und Streuer.
 | Frontdiffusor | Opalacryl 2–3 mm (Volumenstreuung) |
 | Reflektor | weiß diffus, über dem Lichtleiter, mit Luftspalt, kleines Loch für Regelsensor |
 | Zusatzdiffusor (optional) | LEE 216 im Spalt, nur bei messbarem Bedarf |
+| Kantenverspiegelung | Alu-Klebeband auf den nicht eingespeisten Kanten |
 
-Aufbauregeln: Einspeisekante plan/poliert, Luftspalt Lichtleiter–Diffusor 5 mm mit weißen Seitenwänden, Reflektor mit Luftspalt (kein Kontakt zum Lichtleiter).
+Aufbauregeln: Einspeisekante plan/poliert, Mischzone 20–30 mm ab LED-Kante ungeschliffen, Luftspalt Lichtleiter–Diffusor 5–10 mm mit weißen Seitenwänden, Reflektor mit Luftspalt (kein Kontakt zum Lichtleiter).
 
 Homogenitätsprüfung: Flat aufnehmen, Panel 90° drehen, zweites Flat, dividieren. Zielmarke < 1–2 % über die Apertur. Struktur unterhalb des 72-mm-Pupillendurchmessers wird in der Aufnahme wegintegriert und ist irrelevant.
 
@@ -95,7 +96,7 @@ Anforderungen an das Gehäuse:
 - getrennte Bedienseite (Display, Taster) mit Ausschnitten
 - Elektronik- und Sensorkammer streulichtdicht von der Bedienseite getrennt
 
-**Offen:** Fertigungsverfahren (3D-Druck / gefräst / Alu-Profil), konkrete Aufsetz- und Klemmmechanik, Maße. CAD/Druckdateien unter `hardware/CAD/`.
+**Offen:** Fertigungsverfahren (3D-Druck / gefräst / Alu-Profil), konkrete Aufsetz- und Klemmmechanik, Maße. CAD/Druckdateien unter `mechanical/`.
 
 ---
 
@@ -116,17 +117,14 @@ Details und Regel-Leitlinien in `docs/calibration.md` (offen).
 ```
 README.md              dieses Dokument — Geräteübersicht und Teileliste
 docs/
-  concept/
-    hw_concept.md       Konzept Elektronik/Optik (Entwurfsstand)
-    bom_concept.md       Konzept Stückliste (Entwurfsstand)
-  optics.md             (offen) Diffusor-Aufbau, Materialien, Schliff, Homogenitätsmessung
-  enclosure.md          (offen) Gehäuse, Aufsetzmechanik, Lichtdichtung
-  calibration.md        (offen) Regelkonzept, Kalibrierablauf, Messprotokolle
+  optics.md            Diffusor-Aufbau, Materialien, Schliff, Homogenitätsmessung
+  enclosure.md         Gehäuse, Aufsetzmechanik, Lichtdichtung
+  calibration.md       Regelkonzept, Kalibrierablauf, Messprotokolle
 hardware/
-  ECAD/                 Schaltplan, PCB-Layout, bom.md (offen)
-  CAD/                  Gehäuse, Optikhalter (CAD/STEP/STL)
+  bom.md               vollständige Stückliste
+  (Schaltplan, Layout)
 firmware/
-  flatpanel_controller/ ESP32-Firmware (offen)
+mechanical/            CAD / STL für Gehäuse und Optikhalter
 ```
 
 ---
@@ -151,4 +149,3 @@ firmware/
 | Flat-Belichtung | 2–5 s (UV/IR-Cut), länger bei Dualband |
 | Bedienung Feld | 4 beleuchtete Taster + 7-Segment-Display |
 | Bedienung Einrichtung | Webapp über eigenen WLAN-Access-Point |
-# DIY_Flatpanel
