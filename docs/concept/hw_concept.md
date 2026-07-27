@@ -48,7 +48,7 @@ Homogenitätsprüfung: Flat aufnehmen, Panel 90° drehen, zweites Flat, dividier
 
 ## 2. Elektronik
 
-Controller auf Basis ESP32. Vollständige Stückliste in `hardware/bom.md` (offen), aktive Bauteile hier im Überblick.
+Controller auf Basis ESP32. Vollständige Konzept-Stückliste in `docs/concept/bom_concept.md`; finale BOM entsteht in `hardware/ECAD/`. Aktive Bauteile hier im Überblick.
 
 ### Zentrale Bauteile
 
@@ -56,14 +56,14 @@ Controller auf Basis ESP32. Vollständige Stückliste in `hardware/bom.md` (offe
 |---|---|---|
 | MCU | ESP32-WROOM-32E-N4 | — |
 | Regelsensor (Panelkammer) | TSL25911FN | I²C-0, 0x29 |
-| Umgebungslicht | LTR-329ALS-01 | I²C-1, 0x29 |
+| Umgebungslicht | LTR-303ALS-01 | I²C-1, 0x29 |
 | Umgebungstemperatur | MCP9804-E/MS | I²C-0, 0x18 |
-| Strip-Temperatur | NTC MF52C1103F (bedrahtet) | ADC1 |
+| Strip-Temperatur | NTC PANE103395 (10 k, B3950, bedrahtet) | ADC1 |
 | ADC-Referenz | LM4040CYM3-2.5 | Teilerspeisung |
 | Display | Kingbright CC04-41SURKWA (4-stellig 7-Segment, rot, CC) | — |
 | Display-Treiber | AS1115-BSST (QSOP-24) | I²C-0, 0x00 |
-| LED-Schalt-FETs (WW, CW, Tasten rot, Tasten gelb) | 4× AO3400A | Low-side, PWM |
-| Verpolschutz | AO3401A | — |
+| LED-Schalt-FETs (WW, CW, Tasten rot, Blackout) | 4× DMG3414U-7 | Low-side, PWM |
+| Verpolschutz | DMP3099L-7 | — |
 | Spannungsregler | Recom TSR 1-2433E (3,3 V / 1 A) | — |
 
 ### Bedienteil
@@ -71,15 +71,15 @@ Controller auf Basis ESP32. Vollständige Stückliste in `hardware/bom.md` (offe
 | Funktion | Taster |
 |---|---|
 | Plus / Minus / Cal | 3× Würth WS-TATL 440RS67082622 (rot, beleuchtet, 12×12 mm) |
-| Blackout | 1× Würth WS-TATL 440YS67082622 (gelb, separater LED-Pfad) |
+| Blackout | 1× Würth WS-TATL 440VR67082622 (Dual-Color grün/rot) |
 
-Blackout schaltet Display und rote Tasten-LEDs aus, nur die gelbe Taste bleibt schwach an — für den Betrieb während der Aufnahme.
+Blackout schaltet Display und rote Tasten-LEDs aus. Die Blackout-Taste ist zweifarbig: grün, solange alle Kanäle aktiv sind, rot im Blackout-Zustand — für den Betrieb während der Aufnahme. Die zwei LED-Farben werden getrennt angesteuert. Die zweite Farbe wird über einen weiteren Schaltpfad (zusätzlicher FET oder GPIO mit Vorwiderstand) geführt — Festlegung beim Pinmapping.
 
 ### Eingangskette (Schutz und Versorgung)
 
 ```
 12V-Jack -> PPTC (SMD1812B260TF/16) -> Ferrit (FBMH3225HM601NT)
-  -> TVS (SMAJ18A) -> Verpolschutz (AO3401A) -> Puffer -> Buck (TSR 1-2433E)
+  -> TVS (SMAJ18A) -> Verpolschutz (DMP3099L-7) -> Puffer -> Buck (TSR 1-2433E)
 ```
 
 Absicherung gegen Kurzschluss des angeschlossenen Akkus, HF-Entkopplung zur Kamera-USB, Transientenschutz.
@@ -96,7 +96,7 @@ Anforderungen an das Gehäuse:
 - getrennte Bedienseite (Display, Taster) mit Ausschnitten
 - Elektronik- und Sensorkammer streulichtdicht von der Bedienseite getrennt
 
-**Offen:** Fertigungsverfahren (3D-Druck / gefräst / Alu-Profil), konkrete Aufsetz- und Klemmmechanik, Maße. CAD/Druckdateien unter `mechanical/`.
+**Offen:** Fertigungsverfahren (3D-Druck / gefräst / Alu-Profil), konkrete Aufsetz- und Klemmmechanik, Maße. CAD/Druckdateien unter `hardware/CAD/`.
 
 ---
 
@@ -117,14 +117,17 @@ Details und Regel-Leitlinien in `docs/calibration.md` (offen).
 ```
 README.md              dieses Dokument — Geräteübersicht und Teileliste
 docs/
-  optics.md            Diffusor-Aufbau, Materialien, Schliff, Homogenitätsmessung
-  enclosure.md         Gehäuse, Aufsetzmechanik, Lichtdichtung
-  calibration.md       Regelkonzept, Kalibrierablauf, Messprotokolle
+  concept/
+    hw_concept.md       Konzept Elektronik/Optik (Entwurfsstand)
+    bom_concept.md       Konzept Stückliste (Entwurfsstand)
+  optics.md             (offen) Diffusor-Aufbau, Materialien, Schliff, Homogenitätsmessung
+  enclosure.md          (offen) Gehäuse, Aufsetzmechanik, Lichtdichtung
+  calibration.md        (offen) Regelkonzept, Kalibrierablauf, Messprotokolle
 hardware/
-  bom.md               vollständige Stückliste
-  (Schaltplan, Layout)
+  ECAD/                 Schaltplan, PCB-Layout, bom.md (offen)
+  CAD/                  Gehäuse, Optikhalter (CAD/STEP/STL)
 firmware/
-mechanical/            CAD / STL für Gehäuse und Optikhalter
+  flatpanel_controller/ ESP32-Firmware (offen)
 ```
 
 ---

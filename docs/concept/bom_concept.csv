@@ -1,0 +1,48 @@
+﻿Kategorie;Ref;Funktion;Bauteil / Wert;Hersteller-Nr.;Mouser-Nr.;Gehäuse;Menge;Hinweis
+Aktive Bauteile / ICs;U1;MCU;ESP32-WROOM-32E-N4;ESP32-WROOM-32E-N4;356-ESP32WRM32E132PH;Modul;1;"4 MB Flash, PCB-Antenne; Keep-out unter Antenne"
+Aktive Bauteile / ICs;U2;Buck 12->3,3 V;TSR 1-2433E;TSR 1-2433E;495-TSR1-2433E;SIP-3;1;1 A, rauscharm
+Aktive Bauteile / ICs;U3;Regelsensor Panelkammer;TSL25911FN;TSL25911FN;985-TSL25911FN;DFN-6;1;I2C-0, 0x29
+Aktive Bauteile / ICs;U4;Umgebungslicht;LTR-303ALS-01;LTR-303ALS-01;859-LTR-303ALS-01;LGA;1;"I2C-1, 0x29; IRQ optional"
+Aktive Bauteile / ICs;U5;Umgebungstemperatur;MCP9804-E/MS;MCP9804-E/MS;579-MCP9804-E/MS;MSOP-8;1;I2C-0, 0x18
+Aktive Bauteile / ICs;U6;Display-Treiber;AS1115-BSST;AS1115-BSST;985-AS1115-BSST;QSOP-24;1;"I2C-0, 0x00; Common-Cathode"
+Aktive Bauteile / ICs;U7;ADC-Referenz;LM4040CYM3-2.5;LM4040CYM3-2.5-TR;998-LM4040CYM3-2.5TR;SOT-23-3;1;2,5 V Shunt
+Aktive Bauteile / ICs;Q1;Strip-FET WW;DMG3414U-7;DMG3414U-7;621-DMG3414U-7;SOT-23;1;Low-side, PWM 16 Bit
+Aktive Bauteile / ICs;Q2;Strip-FET CW;DMG3414U-7;DMG3414U-7;621-DMG3414U-7;SOT-23;1;Low-side, PWM 16 Bit
+Aktive Bauteile / ICs;Q3;Tasten-LED-FET (rote Gruppe);DMG3414U-7;DMG3414U-7;621-DMG3414U-7;SOT-23;1;Low-side, PWM
+Aktive Bauteile / ICs;Q4;Tasten-LED-FET (Blackout);DMG3414U-7;DMG3414U-7;621-DMG3414U-7;SOT-23;1;"Low-side, PWM; ggf. 2. Pfad fuer Dual-Color"
+Aktive Bauteile / ICs;Q5;Verpolschutz;DMP3099L-7;DMP3099L-7;621-DMP3099L-7;SOT-23;1;"P-Kanal; V_GS +-20 V, keine Gate-Zener noetig"
+Anzeige und Bedienteil;DS1;Display;CC04-41SURKWA;CC04-41SURKWA;604-CC04-41SURKWA;20-DIP;1;4-stellig 7-Segment, rot, gem. Kathode
+Anzeige und Bedienteil;SW1;Taster Plus;WS-TATL 440RS67082622 (rot);440RS67082622;710-440RS67082622;THT 12x12;1;integrierte LED
+Anzeige und Bedienteil;SW2;Taster Minus;WS-TATL 440RS67082622 (rot);440RS67082622;710-440RS67082622;THT 12x12;1;
+Anzeige und Bedienteil;SW3;Taster Cal;WS-TATL 440RS67082622 (rot);440RS67082622;710-440RS67082622;THT 12x12;1;
+Anzeige und Bedienteil;SW4;Taster Blackout;WS-TATL 440VR67082622 (Dual-Color gruen/rot);440VR67082622;710-440VR67082622;THT 12x12;1;"gruen=aktiv, rot=Blackout; zwei LED-Pfade"
+Anzeige und Bedienteil;—;Cap transparent;Wuerth 714409000;714409000;710-714409000;—;5;alle Tasten, Symbol selbst plotten (4 + 1 Test)
+Eingang, Schutz, Versorgung;J1;DC-Buchse;PJ-102AH (5,5/2,1 mm);PJ-102AH;490-PJ-102AH;THT;1;2,1-mm-Pin gegen ASIAIR-Kabel pruefen
+Eingang, Schutz, Versorgung;F1;Sicherung PPTC;SMD1812B260TF/16;SMD1812B260TF/16;603-SMD1812B260TF/16;1812;1;2,6 A Haltestrom
+Eingang, Schutz, Versorgung;FB1;Ferritperle;FBMH3225HM601NT;FBMH3225HM601NT;963-FBMH3225HM601NT;1210;1;600 Ohm/100 MHz (Nachfolger LSMGA451616T851NG moeglich)
+Eingang, Schutz, Versorgung;D1;TVS;SMAJ18A;SMAJ18A;821-SMAJ18AM2G;SMA;1;18 V unidirektional
+Eingang, Schutz, Versorgung;C1;Eingangs-Elko;470 µF / 25 V;MAL214266471E3;594-MAL214266471E3;Radial 10x12;1;low ESR
+Eingang, Schutz, Versorgung;C2;Strip-Puffer-Elko;470 µF / 25 V;MAL214266471E3;594-MAL214266471E3;Radial 10x12;1;nahe Strip-Anschluss
+Eingang, Schutz, Versorgung;C3;Eingangs-Keramik;10 µF / 25 V;GRM21BC71E106ME01K;81-GRM21B71E106ME01K;0805 X7S;1;
+Eingang, Schutz, Versorgung;C4;Buck-Ausgang;100 µF / 6,3 V;GRM31CD80J107MEA8K;81-GRM31CD80J107MA8K;1206 X6T;1;nahe MCU
+Sensor am LED-Streifen (extern);RT1;Strip-Temperatur;NTC 10 k B3950 Bead;PANE103395;995-PANE103395;Bead-Probe;1;"ADC1; Beta 3950 in Firmware"
+Passiva (0805, aus Sortiment/nachbestellen);R1-R4;FET-Gate-Serie;33 Ohm;;;0805;4;je FET Q1-Q4
+Passiva (0805, aus Sortiment/nachbestellen);R5-R8;FET-Gate-Pulldown;10 kOhm;;;0805;4;definierter Aus-Zustand beim Boot
+Passiva (0805, aus Sortiment/nachbestellen);R9-R12;Tasten-LED-Vorwiderstand;3,3 kOhm;;;0805;4;"je LED; trimmen nach Helligkeit"
+Passiva (0805, aus Sortiment/nachbestellen);R13;RSET Display;28 kOhm;;;0805;1;"AS1115 Segmentstrom; trimmen ~27-30 k"
+Passiva (0805, aus Sortiment/nachbestellen);R14;NTC-Teiler;10 kOhm 1 %;;;0805;1;gegen NTC, an 2,5-V-Ref
+Passiva (0805, aus Sortiment/nachbestellen);R15;NTC-Serie zum ADC;1 kOhm;;;0805;1;RC-Filter
+Passiva (0805, aus Sortiment/nachbestellen);R16;Referenz-Vorwiderstand;820 Ohm;;;0805;1;Speisung LM4040 aus 3,3 V
+Passiva (0805, aus Sortiment/nachbestellen);R17,R18;Spannungsteiler 12 V;68 kOhm / 10 kOhm 1 %;;;0805;2;an ADC1, aus 2,5-V-Ref
+Passiva (0805, aus Sortiment/nachbestellen);R19,R20;I2C-0 Pullup;4,7 kOhm;;;0805;2;SDA/SCL Bus 0
+Passiva (0805, aus Sortiment/nachbestellen);R21,R22;I2C-1 Pullup;4,7 kOhm;;;0805;2;SDA/SCL Bus 1
+Passiva (0805, aus Sortiment/nachbestellen);R23;Verpolschutz Gate-Pulldown;100 kOhm;;;0805;1;Q5
+Passiva (0805, aus Sortiment/nachbestellen);C5;NTC-Filter;100 nF;;;0805;1;am ADC-Pin
+Passiva (0805, aus Sortiment/nachbestellen);C6;Referenz-Abblock;100 nF;;;0805;1;an LM4040
+Passiva (0805, aus Sortiment/nachbestellen);C7;Display VDD Abblock;10 µF;;;0805;1;an AS1115
+Passiva (0805, aus Sortiment/nachbestellen);C8;Display VDD Keramik;100 nF;;;0805;1;an AS1115
+Passiva (0805, aus Sortiment/nachbestellen);C9-C14;Abblock allgemein;100 nF;;;0805;6;an MCU, FETs, Buck-Eingang
+Steckverbinder / mechanisch;J2;LED-Streifen-Anschluss;3-pol Schraubklemme 5 mm;;;THT;1;+12 V, WW-, CW-
+Steckverbinder / mechanisch;J3;NTC-Anschluss;2-pol JST-PH;;;THT;1;Strip-Temperatur, trennbar
+Steckverbinder / mechanisch;J4;Programmierheader;6-pol 2,54 mm;;;THT;1;GND, 3V3, EN, GPIO0, TX, RX
+Steckverbinder / mechanisch;—;Dichtung;TPU-Ring;;;—;1;PCB gegen Gehaeuse, lichtdicht
